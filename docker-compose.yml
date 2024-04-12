@@ -1,0 +1,32 @@
+version: '2.21'
+
+services:
+
+  postgres_db:
+    image: postgres:latest
+    restart: always
+    container_name: postgres_container
+    command: -p 5432
+    volumes: 
+      - ./docker/pg-data:/var/lib/postgresql/data/
+    env_file:
+      - .env
+    network_mode: "host"
+
+  pgadmin_app:
+    image: dpage/pgadmin4:latest
+    restart: always
+    container_name: pgadmin_container
+    user: '${UID}:${GID}'
+    volumes:
+      - ./docker/pgadmin-data:/var/lib/pgadmin
+    env_file:
+      - .env
+    depends_on:
+      - postgres_db
+    network_mode: "host"
+    
+volumes:
+  pg_data: 
+  pgadmin_data:
+  
