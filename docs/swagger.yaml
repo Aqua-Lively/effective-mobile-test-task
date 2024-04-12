@@ -1,0 +1,12 @@
+basePath: /api
+host: localhost:8080
+info:
+  contact:
+    email: support@example.com
+    name: API Support
+  description: This is a sample API for managing cars and people.
+  termsOfService: https://example.com/terms/
+  title: Car API
+  version: "1.0"
+paths: {}
+swagger: "2.0"

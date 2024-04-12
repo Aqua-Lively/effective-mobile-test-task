@@ -31,6 +31,14 @@ type People struct {
 
 var db *gorm.DB
 
+// @title Car API
+// @version 1.0
+// @description This is a sample API for managing cars and people.
+// @termsOfService https://example.com/terms/
+// @contact.name API Support
+// @contact.email support@example.com
+// @host localhost:8080
+// @BasePath /api
 func main() {
 
 	err_start := godotenv.Load(".env")
